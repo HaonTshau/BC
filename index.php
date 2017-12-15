@@ -16,7 +16,7 @@ $name = isset($_GET['name_']) ? $_GET['name_'] : '';
 $number = isset($_GET['number_']) ? $_GET['number_'] : '';
 /////////////////////////////////////////
 //any way , get classes
-$Class_ = '<option value=""></option>';
+$Class_ = '<option value=""></option>';    //default ,  select nothing
 //$sql_getClass = "select *  from `course` where `left` > 0 group by `name` having `left`>0 order by `name`";
 $sql_getClass = "select * from `course` where `left` > 0 order by `name` asc";
 $result = $bc->query($sql_getClass);
