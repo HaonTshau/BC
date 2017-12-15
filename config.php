@@ -1,3 +1,5 @@
 <?php
-define("MYSQLUSER", 'root');
-define("MYSQLPASS", '');
+//define MySQL Server username and password
+define("USER", 'root');
+define("PASSWORD", '');
+
