@@ -14,6 +14,7 @@ $classSelected = isset($_GET['classSelected']) ? $_GET['classSelected'] : '';
 $timeSelected = isset($_GET['timeSelected']) ? $_GET['timeSelected'] : '';
 $name = isset($_GET['name_']) ? $_GET['name_'] : '';
 $number = isset($_GET['number_']) ? $_GET['number_'] : '';
+$msg = isset($_GET['msg']) ? $_GET['msg'] : '';
 /////////////////////////////////////////
 //any way , get classes
 $Class_ = '<option value=""></option>';    //default ,  select nothing
@@ -67,7 +68,7 @@ window.location.href = url;
 	<img style="margin-left: 25px;" src="class.png" />
 </div>
 <div style="width:911px;height:320px;margin:0 auto;padding:0;margin-top:30px;">
-	<form name="bookclass" action="bookclass.php" method="get">
+	<form name="bookclass" action="bookclass.php" method="post">
 		<table border=1 cellpadding="" style="border-color:black;width:100%;">
 			<tr>
 				<td>Class</td>
@@ -101,6 +102,7 @@ window.location.href = url;
 				<td></td>
 				<td>
 					<button id="submit_" type="submit" style="width:100px;height:35px;" value="submit">Submit</button>
+					<?php echo $msg?>
 				</td>
 			</tr>
 		</table>
