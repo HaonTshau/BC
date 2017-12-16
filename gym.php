@@ -24,7 +24,7 @@ $tempArray = array();
 while($row = $result->fetch(PDO::FETCH_ASSOC)){
 	if(!in_array($row['name'],$tempArray,true)){
 		array_push($tempArray,$row['name']);
-		if(in_array($classSelected,$tempArray,true)){
+		if($row['name'] === $classSelected){
 			$Class_ = $Class_.'<option value="'.$row['name'].'" selected="selected">'.$row['name'].'</option>';
 		}
 		else{
@@ -37,18 +37,15 @@ unset($tempArray);
 //get time list,according to class
 $sql_getTime = "select * from `course` where `name`='$classSelected' and `left`>0";
 $result = $bc->query($sql_getTime);
-$tempArray = array();
-$Time_ = '<option value=""></option>';
+$Time_ = '';
 while($row = $result->fetch(PDO::FETCH_ASSOC)){
-		array_push($tempArray,$row['time']);
-		if(in_array($timeSelected,$tempArray,true)){
+		if($row['time'] === $timeSelected){
 			$Time_ = $Time_.'<option value="'.$row['time'].'" selected="selected">'.$row['time'].'</option>';
 		}
 		else{
 			$Time_ = $Time_.'<option value="'.$row['time'].'">'.$row['time'].'</option>';
 		}
 }
-unset($tempArray);
 ?>
 <!DOCTYPE html>
 <html>
